@@ -1,8 +1,11 @@
 package com.thuhtooaung.ecommerce
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -12,14 +15,15 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.thuhtooaung.ecommerce.ui.screens.StartScreen
 import com.thuhtooaung.ecommerce.ui.screens.main.MainScreen
 import com.thuhtooaung.ecommerce.ui.screens.product.ProductScreen
-import com.thuhtooaung.ecommerce.ui.screens.StartScreen
 import com.thuhtooaung.ecommerce.ui.theme.EcommerceTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge(navigationBarStyle = SystemBarStyle.dark(Color.TRANSPARENT))
         setContent {
             EcommerceTheme {
                 // A surface container using the 'background' color from the theme
